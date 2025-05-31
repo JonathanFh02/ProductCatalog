@@ -1,2 +1,119 @@
-/* Estilos base */
-body { font-family: Arial, sans-serif; }
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f6f6f6;
+    margin: 0;
+    padding: 0;
+}
+
+.title-center {
+    text-align: center;
+    margin-top: 30px;
+    color: #111;
+}
+
+.category-filter {
+    text-align: center;
+    margin: 32px 0 0 0;
+}
+
+.btn-filter {
+    margin: 0 8px 12px 8px;
+    padding: 8px 18px;
+    background: #007a33;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-filter:hover {
+    background: #005a26;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 16px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+}
+
+.card img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    background: #f3f3f3;
+}
+
+.card .name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #222;
+    text-align: center;
+}
+
+.card .category {
+    font-size: 1rem;
+    color: #007a33;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.card .description {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 12px;
+    text-align: center;
+    min-height: 40px;
+}
+
+.card .price {
+    font-size: 1.15rem;
+    color: #007a33;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card .stock {
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 8px;
+}
+
+.btn-cart {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #007a33;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-cart:hover {
+    background: #005a26;
+}
