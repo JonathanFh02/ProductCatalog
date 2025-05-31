@@ -455,3 +455,29 @@ body {
     background: var(--accent-color);
     color: var(--primary-color);
 }
+
+.filter-feedback {
+    text-align: center;
+    margin: 12px 0 0 0;
+    color: var(--primary-color);
+    font-family: var(--title-font);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.input-error {
+    border: 2px solid #ff4d4d !important;
+    background-color: #fff0f0;
+}
+
+.input-success {
+    border: 2px solid #28a745 !important;
+    background-color: #f0fff0;
+}
+
+.error-message {
+    color: #ff4d4d;
+    font-size: 0.9rem;
+    margin-top: 4px;
+    text-align: center;
+}

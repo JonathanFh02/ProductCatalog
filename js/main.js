@@ -81,7 +81,13 @@ function showCartInfo() {
 function renderProducts(products) {
   currentProducts = [...products];
   const grid = document.getElementById('product-grid');
+  const feedback = document.getElementById('filter-feedback');
   if (!grid) return;
+
+  if (feedback) {
+    feedback.textContent = `${products.length} producto(s) encontrado(s)`;
+  }
+
   grid.innerHTML = '';
   products.forEach(product => {
     const card = document.createElement('div');
@@ -123,6 +129,7 @@ function renderProducts(products) {
   });
 
 }
+
 
 
 fetch(endpoint)
@@ -170,12 +177,46 @@ function applySort() {
 }
 
 document.getElementById('filter-by-range').addEventListener('click', function () {
-  const min = Number(document.getElementById('min-price').value) || 0;
-  const max = Number(document.getElementById('max-price').value) || Infinity;
-  const filtered = allProducts.filter(product =>
-    product.price >= min && product.price <= max
+  const minInput = document.getElementById('min-price');
+  const maxInput = document.getElementById('max-price');
+  const errorDiv = document.getElementById('price-error');
+  const minValue = minInput.value.trim();
+  const maxValue = maxInput.value.trim();
+  const min = Number(minInput.value);
+  const max = Number(maxInput.value);
+
+  if (minValue === '' && maxValue === '') {
+    minInput.classList.remove('input-error', 'input-success');
+    maxInput.classList.remove('input-error', 'input-success');
+    errorDiv.style.display = 'none';
+    errorDiv.textContent = '';
+    return;
+  }
+
+  minInput.classList.remove('input-error', 'input-success');
+  maxInput.classList.remove('input-error', 'input-success');
+  errorDiv.style.display = 'none';
+  errorDiv.textContent = '';
+
+  if (min > max) {
+    minInput.classList.add('input-error');
+    maxInput.classList.add('input-error');
+    errorDiv.style.display = 'block';
+    errorDiv.textContent = 'El precio mínimo no puede ser mayor que el máximo.';
+    return;
+  }
+  minInput.classList.add('input-success');
+  maxInput.classList.add('input-success');
+  const filtered = currentProducts.filter(product =>
+    product.price >= (isNaN(min) ? 0 : min) && product.price <= (isNaN(max) ? Infinity : max)
   );
-  renderProducts(filtered);
+
+  if (filtered.length === 0) {
+    const grid = document.getElementById('product-grid');
+    grid.innerHTML = '<p>No hay productos en ese rango de precio.</p>';
+  } else {
+    renderProducts(filtered);
+  }
 });
 
 document.getElementById('open-cart-modal').addEventListener('click', openCartModal);
