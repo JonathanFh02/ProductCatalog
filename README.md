@@ -3,6 +3,9 @@
 Este es un catálogo de productos interactivo con carrito de compras, filtros avanzados y diseño responsive, desarrollado con HTML, CSS y JavaScript puro.
 Los productos se obtienen dinámicamente desde AWS (API Gateway + Lambda + DynamoDB).
 
+Ver el sitio en GitHub Pages
+https://jonathanfh02.github.io/ProductCatalog/
+
 📦 Características
 Catálogo visual: tarjetas con imagen, nombre, precio, categoría y stock.
 
