@@ -1,79 +1,78 @@
-# 🧪 Prueba Técnica Frontend - Catálogo de Productos Interactivo
+🛍️ Catálogo de Productos
+¡Bienvenido/a a MiTienda!
+Este es un catálogo de productos interactivo con carrito de compras, filtros avanzados y diseño responsive, desarrollado con HTML, CSS y JavaScript puro.
+Los productos se obtienen dinámicamente desde AWS (API Gateway + Lambda + DynamoDB).
 
-Este proyecto es parte de una prueba técnica para evaluar tus habilidades como desarrollador/a frontend 
-utilizando HTML, CSS y JavaScript.
+📦 Características
+Catálogo visual: tarjetas con imagen, nombre, precio, categoría y stock.
 
-## 🎯 Objetivo
+Filtros avanzados: por categoría y por rango de precio.
 
-Desarrollar una aplicación web que muestre un catálogo de productos interactivo, con un enfoque fuerte en UI/UX, 
-diseño responsive y lógica de frontend pura (sin frameworks).
+Ordenar por precio: ascendente, descendente o por defecto.
 
-## 🧩 Requisitos funcionales
+Carrito de compras: agregar, eliminar, vaciar y ver resumen de productos.
 
-### 🛍️ Catálogo
-- Mostrar tarjetas de productos con imagen, nombre, precio y categoría.
+Persistencia: el carrito se guarda en localStorage.
 
-### 🔍 Filtros
-- Filtro por categoría (select).
-- Filtro por precio (slider o campos numéricos).
+Validaciones visuales: feedback inmediato en filtros y formularios.
 
-### 🛒 Carrito
-- Agregar productos al carrito.
-- Mostrar resumen del carrito: lista de productos, total y eliminar.
-- Contador de productos (ícono de carrito).
-- Guardar estado del carrito en `localStorage`.
+Responsive: diseño mobile-first, se adapta a cualquier dispositivo.
 
-## 🎨 Requisitos de diseño y frontend
+Íconos: uso de FontAwesome para mejorar la interfaz.
 
-- Layout con Flexbox o Grid.
-- Diseño responsivo (mobile-first).
-- Interacciones suaves (hover, animaciones).
-- Paleta de colores y tipografía definida.
-- Uso de íconos (FontAwesome recomendado).
-- (Opcional) Modo oscuro.
+Accesibilidad básica: etiquetas y roles para mejor experiencia.
 
-## 🚀 Extras opcionales
+Datos en la nube: integración serverless con AWS.
 
-- Gráfico: productos por categoría.
-- Despliegue en GitHub Pages.
-- Validaciones visuales.
+☁️ Integración con AWS: Productos en la nube
+Este catálogo de productos consume datos en tiempo real desde AWS usando una arquitectura serverless moderna:
 
-## 🗂 Estructura recomendada
+DynamoDB:
+Los productos están almacenados en una tabla DynamoDB (NoSQL, escalable y de alta disponibilidad).
 
-```
-catalogo-productos/
-│
+AWS Lambda:
+Una función Lambda lee los productos de DynamoDB y responde a las solicitudes.
+
+API Gateway:
+Expone un endpoint HTTP seguro para que el frontend obtenga los productos.
+
+Frontend:
+El archivo main.js hace un fetch al endpoint de API Gateway y muestra los productos dinámicamente.
+
+🖥️ Tecnologías usadas
+HTML5
+
+CSS3 (Flexbox, Grid, variables, media queries)
+
+JavaScript ES6+
+
+FontAwesome (íconos)
+
+Google Fonts (Montserrat, Open Sans)
+
+AWS DynamoDB, Lambda, API Gateway
+
+📋 Estructura del proyecto
+text
+/
 ├── index.html
 ├── css/
 │   └── styles.css
 ├── js/
-│   ├── main.js
-│   └── data.js
-├── assets/
-│   └── imágenes/
-└── README.md
-```
+│   └── main.js
+├── README.md
+└── ...
 
-## 📋 Criterios de evaluación
 
-| Criterio                         | Peso |
-|----------------------------------|------|
-| Funcionamiento                   | 25%  |
-| Código limpio y modular          | 20%  |
-| Buen uso de HTML/CSS/JS          | 20%  |
-| UI/UX: diseño atractivo y claro  | 15%  |
-| Responsive design                | 10%  |
-| Uso adecuado de Git              | 10%  |
+📑 Cómo usar
+Clona este repositorio:
 
-## 🚀 Cómo correr el proyecto
+bash
+git clone https://github.com/JonathanFh02/ProductCatalog.git
+Abre index.html en tu navegador
 
-1. Clona este repositorio:
-```bash
-git clone https://github.com/kblandonv/catalogo-productos.git
-cd catalogo-productos
-```
-2. Abre `index.html` en tu navegador.
+¡Listo! Navega, filtra, agrega al carrito y disfruta.
 
-## 👤 Autor
-
-_Tu nombre aquí_
+🧑‍💻 Autor
+Jonathan Florez Henao
+https://github.com/JonathanFh02
